@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>LAB1</title>
+<style>
+body{
+background-color:#96D4D4;}
+table, th, td {
+  border: 1px #96D4D4;
+  border-collapse: collapse;
+  border-radius: 10px;
+}
+th, td {
+  background-color: lightgrey;
+}
+</style>
+
+</head>
+<body>
+
+
+<table bgcolor="#96D4D4" border="2" cellspacing="5" cellpadding="5"  width="100%" height="60">
+<tr> 
+<td align="left">
+<table border="0" cellspacing="1" cellpadding="1" align="center" width="547"  >
+<td width="96"><font face="san-serif" color="white" ><h3><a href="HOME.html">HOME</a></h3> </font></td>
+<td width="96"><font face="san-serif" color="white" ><h3><a href="customer.html">CUSTMER</h3> </font></td>
+<td width="96"><font face="san-serif" color="white" ><h3><a href="manager.html">MANAGER</h3> </font></td>
+</table>
+</td>
+</tr>
+</table>
+
+<center><h1 style="color:white; border:2px solid Tomato; width:25%  "><strong>WELCOME </strong></h1></center>
+<center><canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML canvas tag.</canvas></center>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+// Create gradient
+var grd = ctx.createLinearGradient(0,0,200,0);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(10,10,150,80);
+ctx.fillText("Hello World", 10, 50);
+
+
+</script>
+
+<table   cellpadding="10" cellspacing="1" align="center">
+<caption><b><h2>clothes availabe in our shop</h2></b></caption>
+<tr>
+<td><ol type="I" start="1">
+<li>mens section </li>
+<ul type="square">
+<a href="men.html">
+  <img src="men.jpg" alt="mens wear" style="width:152px;height:150px;">
+</a>
+<li>Trousers</li>
+<li>Shirts</li>
+<li>T-Shirts</li>
+<li>shorts</li>
+<li>jeans</li>
+</ul></td>
+<td><ol type="I" start="2">
+<a href="women.html">
+  <img src="saree.jpg" alt="womens wear" style="width:152px;height:150px;">
+</a>
+<li><b>womens section </b></li>
+<ul type="square">
+<li>Sarees</li>
+<li>Kurta</li>
+<li>Duppatta</li>
+<li>Jeans</li>
+<li>Tops</li>
+</ul></td>
+<td><ol type="I" start="3">
+<li><b>kids section </b></li>
+<ol type="a" start="1">
+<ol><li>boys</li>
+<ul type="square">
+<li>Jeans</li>
+<li>T-Shirts</li>
+<a href="boy.html">
+  <img src="boy.jpg" alt="mens wear" style="width:150px;height:152px;">
+</a>
+<li>Suits</li>
+<li>Night-pants</li></ul>
+<li>girl</li>
+<ul type="square">
+<li>Skirts</li>
+<li>Pants</li>
+<li>Frock</li><a href="girl.html">
+  <img src="girl.jpg" alt="mens wear" style="width:152px;height:152px;">
+</a>
+<li>Jeans</li>
+<li>Tops</li>
+</ol>
+</ul></td>
+</tr>
+</table>
+
+
+</body>
+</html>
