@@ -1,0 +1,10 @@
+<!DOCTYPE retail
+[
+<!ELEMENT customer (c_id,name,ph_no,bill_no,address,e_id)>
+<!ELEMENT c_id (#pCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT ph_no (#PCDATA)>
+<!ELEMENT bill_no (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT e_id (#PCDATA)>
+]>
