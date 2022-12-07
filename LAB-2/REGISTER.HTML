@@ -1,11 +1,11 @@
-<html>
+<!DOCTYPE html>
 <head>
 <title>
 form
 </title>
 <style>
 body{
-background-color:#BAB86C;}
+background-color:#9addae;}
 table, th, td {
   border: 1px #C45AEC;
   border-collapse: collapse;
@@ -49,9 +49,7 @@ Mail ID:<input type="text" name="mail_id"/><br/></br/>
 <h><b>UPLOAD ANY REPLICANT IMAGE IF YOU HAVE</b></h><br/><br/>
 <input type="file" name="markssheet" accept="image"/><br/><br/>
 <input type="submit" name="SUBMIT" value="submit"/>
-<input type="reset" name="RESET" value="reset"/>
-<input type="HOME" name="HOME" value="                HOME" href='home.html'/>
-
+<input type="reset" name="RESET" value="reset"/><br>
 </form>
 <br>
 <br>
@@ -80,13 +78,18 @@ RATINGS
 <form>
  <label for="datenow">What is the current date of your visit?:</label>
             <input id="datenow" type="date" name="date"><br>
-            <label for="category" >what kind if cloth you r searching ?</label>
-            <input id="cloth" type="number" name="types"><br>
-            <label for="rating">How would you rate this page?</label>
+            <label for="category" >how much rating you wish to give us ?</label>
+            <input id="category" type="number" name="types"><br>
+            <label for="rating">do you wish to refer our store/page to your friends ?</label>
             <input id="rating" type="range" name="rating"><br>
             <p>If you have entered everything then your progress is:
             <meter min="0" low="40" high="90" max="100" value="100"></meter></p>
+			<label>enter your location </label>
+			<label>logititude</label><input type="text" name="longitude">
+						<label>latitude</label><input type="text" name="latitude">
+
 			 <button><input type="submit"></button>
+			 
 			 </form>
 	<p>Click the button to get your coordinates.</p>
 
@@ -110,5 +113,6 @@ function showPosition(position) {
     "<br>Longitude: " + position.coords.longitude;
 }
 </script>
+<pre><p style=" font-size:200%;  color:red-blood; margin-left:80%;"><A HREF="HOME.HTML">BACK TO HOME</A></pre>
 </body>
 </html>

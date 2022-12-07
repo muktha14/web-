@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+       
+   <script type = "text/javascript">
+       function validate() {
+       
+          if( document.myForm.Name.value == "" ) {
+             alert( "Please provide your name!" );
+             document.myForm.Name.focus() ;
+             return false;
+          }
+   
+          if (!/^[a-zA-Z]*$/g.test(document.myForm.Name.value)) {
+            alert("Name should contain alphabets only.!");
+            document.myForm.name.focus();
+            return false;
+          }
+
+          
+          if( document.myForm.PhoneNumber.value == "" || isNaN( document.myForm.PhoneNumber.value ) ||
+             document.myForm.PhoneNumber.value.length != 10 ) {
+             
+             alert( "Please provide a  10 digit mobile number!" );
+             document.myForm.PhoneNumber.focus() ;
+             return false;
+          }
+
+          var res = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+          var str = document.getElementById("t1").value;
+            if (str.match(/[a-z]/g) && str.match(/[A-Z]/g) && str.match(/[0-9]/g) && str.match( /^[a-zA-Z0-9!@#$%^&*]{6,16}$/) && str.length >= 8)
+            {}
+
+         else
+        {
+            alert("invalid password!");
+            document.myForm.Password.focus() ;
+             return false;
+        }
+    
+
+       }
+
+
+
+  function validateEmail() {
+     var emailID = document.myForm.EMail.value;
+     atpos = emailID.indexOf("@");
+     dotpos = emailID.lastIndexOf(".");
+     
+     if (atpos < 1 || ( dotpos - atpos < 2 )) {
+        alert("Please enter correct email ID")
+        document.myForm.EMail.focus() ;
+        return false;
+     }
+     return( true );
+  }
+ </script>
+</head>
+<body>
+   <br>
+
+   <h1 align="center">Form Validation using JS..!!</h1>
+   <br>
+
+   <form action = "" name = "myForm" onsubmit = "return(validate());">
+
+      <table cellspacing = "2" cellpadding = "5" border = "1" align="center">
+         
+         <tr>
+            <td align = "right">Name</td>
+            <td><input type = "text" name = "Name" /></td>
+         </tr>
+         
+         <tr>
+            <td align = "right">PhoneNumber</td>
+            <td><input type = "text" name = "PhoneNumber" /></td>
+         </tr>
+         
+         <tr>
+            <td align = "right" id = "t1">Password</td>
+            <td><input type = "password" name = "Password" /></td>
+
+            <!-- <td align = "right" for="psw">Password</td>
+            <td><input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required></td> -->
+         </tr>
+         
+         <tr>
+            <td align = "right"></td>
+            <td><input type = "submit" value = "Submit" /></td>
+         </tr>
+         
+      </table>
+
+   </form>
+<pre> Passwords must contain:
+    - a minimum of 1 lower case letter [a-z] and
+    - a minimum of 1 upper case letter [A-Z] and
+    - a minimum of 1 numeric character [0-9] and
+    - 1 special character: ~`!@#$%^&*()-_+={}[]|\;:"<>,./?
+    - at least 1 upper case, numeric, and special character must be EMBEDDED somewhere in the middle of the password, and not just be the first or the last character of the password string.</pre>
+   
+</body>
+</html>
+apps-fileview.texmex_20221116.04_p1
+validation.html
+Displaying validation.html.

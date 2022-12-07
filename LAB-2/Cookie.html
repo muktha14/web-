@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <label for="name">Name:</label>
+    <input type="text" id="name"><br>
+    <br>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email"><br>
+    <br>
+    
+    <label for="email">Course:</label>
+    <input type="text" id="course"><br>
+    <br>
+
+    <label for="color">Choose Color:</label>
+    <select id="color" onchange="display()">
+        <option value="Select Color" selected disabled>Select Color</option>
+        <option value="#e29578">Dark Salmon</option>
+        <option value="#006d77">Ming</option>
+        <option value="#edf6f9">Alice Blue</option>
+    </select>
+    <br><br>
+    
+    <input type="button" value="Set Cookie" onclick="setCookie()">
+    <input type="button" value="Get Cookie" onclick="getCookie()">
+    <input type="button" value="delete Cookie" onclick="delete1()">
+
+    
+
+    <script>
+        function setCookie() {
+                document.cookie = "name=" + document.getElementById("name").value;"expires=thu,08 dec 2022 12:00:00 UTC";
+                document.cookie = "email=" + document.getElementById("email").value;"expires=thu,08 dec 2022 12:00:00 UTC";
+                document.cookie = "course=" + document.getElementById("course").value;"expires=thu,08 dec 2022 12:00:00 UTC";
+                document.cookie = "bgcolor=" + document.getElementById("color").value;"expires=thu,08 dec 2022 12:00:00 UTC";
+            }
+            function getCookie() {
+                if (document.cookie.length != 0) {
+                    alert("Name=" + document.getElementById("name").value + " Email=" + document.getElementById("email").value + " Course=" + document.getElementById("course").value + "Bgcolor=" + document.getElementById("color").value);
+                }
+                else {
+                    alert("Cookie not available");
+                }
+            }
+            
+        function display() {
+            var value = document.getElementById("color").value;
+            if (value != "Select Color") {
+                document.bgColor = value;
+                document.cookie = "color=" + value;
+            }
+        }
+        window.onload = function () {
+            if (document.cookie.length != 0) {
+                var array = document.cookie.split("=");
+                document.getElementById("color").value = array[1];
+                document.bgColor = array[1];
+            }
+        }
+      function delete1(){
+        document.cookie="Name=;" + document.getElementById("name").value; "expires=wed,07 dec 2022 09:00:00 UTC; path=/;";
+      }
+    </script>
+</body>
+
+</html>

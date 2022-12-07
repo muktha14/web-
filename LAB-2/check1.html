@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Form Validation</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="form-content">
+        <h2>check for the cookies</h2>
+        <input type="button" value="Set Cookie" onclick="setCookie()">
+        <input type="button" value="Get Cookie" onclick="getCookie()">
+        <input type="button" value="delete Cookie" onclick="delete1()">
+    
+    </div>
+ 
+
+    <script>
+        function setCookie() {
+                document.cookie = "fullname=" + document.getElementById("name").value;"expires=thu,08 dec 2022 12:00:00 UTC";
+                document.cookie = "email=" + document.getElementById("email").value;"expires=thu,08 dec 2022 12:00:00 UTC";
+                document.cookie = "course=" + document.getElementById("course").value;"expires=thu,08 dec 2022 12:00:00 UTC";
+                document.cookie = "bgcolor=" + document.getElementById("color").value;"expires=thu,08 dec 2022 12:00:00 UTC";
+            }
+            function getCookie() {
+                if (document.cookie.length != 0) {
+                    alert("Name=" + document.getElementById("name").value + " Email=" + document.getElementById("email").value + " Course=" + document.getElementById("course").value + "Bgcolor=" + document.getElementById("color").value);
+                }
+                else {
+                    alert("Cookie not available");
+                }
+            }
+            
+        function display() {
+            var value = document.getElementById("color").value;
+            if (value != "Select Color") {
+                document.bgColor = value;
+                document.cookie = "color=" + value;
+            }
+        }
+        window.onload = function () {
+            if (document.cookie.length != 0) {
+                var array = document.cookie.split("=");
+                document.getElementById("color").value = array[1];
+                document.bgColor = array[1];
+            }
+        }
+      function delete1(){
+        document.cookie="Name=;" + document.getElementById("name").value; "expires=wed,07 dec 2022 09:00:00 UTC; path=/;";
+      }
+    </script>
+</body>
+
+</html>
