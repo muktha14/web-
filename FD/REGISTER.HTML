@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<head>
+<title>
+form
+</title>
+<style>
+body{
+background-color:#9addae;}
+table, th, td {
+  border: 1px #C45AEC;
+  border-collapse: collapse;
+  border-radius: 10px;
+}
+</style>
+</head>
+<body>
+<h1>
+<center><table border='2'>
+<th style="color:black; border:5px white; font-size:50px;"><strong>GET YOUR CLOTHES CUSTOMISED</strong></th>
+
+</table></center></h1>
+<br>
+<br>
+<br>
+
+<form>
+First Name:<input type="text" name="first_name"/><br><br/>
+Last Name:<input type="text" name="last_name"/></br><br/>
+Mail ID:<input type="text" name="mail_id"/><br/></br/>
+<br/><br/>About Yorself:<br/><br/>
+<textarea rowa:"5" cols="50" name="description">
+</textarea><br/><h><b> Select cloth color:</b></h><br/><br/>
+<input type="checkbox" name="green" checked >GREEN
+<input type="checkbox" name="blue " values="on">BLUE 
+<input type="checkbox" name="red" values="on" >RED
+<input type="checkbox" name="black" values="on">BLACK
+<input type="checkbox" name="white" values="on">WHITE
+<input type="button" name="OK" value="ok"/><br/><br/>
+<h><b> CHOOSE CLOTH TYPE: </b></h>
+<select name ="dropdown">
+<option value="COTTON">COTTON</option>
+<option value="RAYON">RAYON</option>
+<option value="SILK">SILK</option>
+<option value="OREGANZA">OREGANZA</option>
+
+</select>
+
+<input type="button" name="OK" value="ok"/><br/><br/>
+<h><b>UPLOAD ANY REPLICANT IMAGE IF YOU HAVE</b></h><br/><br/>
+<input type="file" name="markssheet" accept="image"/><br/><br/>
+<input type="submit" name="SUBMIT" value="submit"/>
+<input type="reset" name="RESET" value="reset"/><br>
+</form>
+<br>
+<br>
+
+<canvas id="myCanvas" width="1050" height="100" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML canvas tag.</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+// Create gradient
+var grd = ctx.createLinearGradient(0,0,200,0);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(10,10,1075,90);
+
+ctx.fillText("RATINGS", 100, 300);
+
+
+</script>
+
+<br>
+RATINGS
+<form>
+ <label for="datenow">What is the current date of your visit?:</label>
+            <input id="datenow" type="date" name="date"><br>
+            <label for="category" >how much rating you wish to give us ?</label>
+            <input id="category" type="number" name="types"><br>
+            <label for="rating">do you wish to refer our store/page to your friends ?</label>
+            <input id="rating" type="range" name="rating"><br>
+            <p>If you have entered everything then your progress is:
+            <meter min="0" low="40" high="90" max="100" value="100"></meter></p>
+			<label>enter your location </label>
+			<label>logititude</label><input type="text" name="longitude">
+						<label>latitude</label><input type="text" name="latitude">
+
+			 <button><input type="submit"></button>
+			 
+			 </form>
+	<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+    
+function showPosition(position) {
+    x.innerHTML="Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+<pre><p style=" font-size:200%;  color:red-blood; margin-left:80%;"><A HREF="HOME.HTML">BACK TO HOME</A></pre>
+</body>
+</html>
