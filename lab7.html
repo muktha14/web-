@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        font-size: 14px;
+      }
+  
+      #heading {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+  
+      #custtable {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+  
+      #custtable td,
+      #custtable th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+  
+      #custtable tr:nth-child(even) {
+        background-color: #daf0f7;
+      }
+  
+      #custtable tr:hover {
+        background-color: #ddd;
+      }
+  
+      #custtable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: #042233;
+        color: white;
+      }
+      </style>
+  </head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body style="background-color: rgb(240, 221, 54); ">
+<center><h1 style="color:rgb(5, 45, 175); font-size: 30px;">CITY FASION</h1></center>
+<div ng-app="order" ng-controller="namesCtrl" >
+  
+ <p style=" color:rgb(29, 28, 28)"><label><b><b>TYPE HERE TO SEARCH</b></b></label><input type="text" ng-model="searchText"></p> 
+<table border="1" width="100%" id="custtable">
+  
+<tr>
+ 
+  <th ng-click="orderByMe('c_id')">customer id</th>
+  <th ng-click="orderByMe('name')">Name</th>
+  <th ng-click="orderByMe('ph_no')">phone number</th>
+  <th ng-click="orderByMe('bill_no')">bill number</th>
+  <th ng-click="orderByMe('amount')">amount</th>
+<th ng-click="orderByMe('address')">address</th>
+<th ng-click="orderByMe('e_id')">e_id</th>
+<th ng-click="orderByMe('x.name+','+x.address')">cus with add</th>
+</tr>
+<tr ng-repeat="x in names | orderBy:myOrderBy |filter:searchText">
+<td>{{x.c_id|lowercase}}</td>
+<td>{{x.name|uppercase}}</td>
+<td>{{x.ph_no}}</td>
+<td>{{x.bill_no|number}}</td>
+<td>{{x.amount|currency}}</td>
+<td>{{x.address}}</td>
+<td>{{x.e_id}}</td>
+<td>{{x.name+','+x.address}}</td>
+
+</tr>
+</table>
+
+</div>
+
+<script>
+
+angular.module('order', []).controller('namesCtrl', function($scope) {
+    $scope.names = [
+    {"c_id":"C1C","name":"ANDRIYA","ph_no":"9124689752","bill_no":"101","amount":"1500","address":"BANGALORE","e_id":"E1M"},
+    {"c_id":"C2C","name":"SNEHA","ph_no":"7846392648","bill_no":"102","amount":"1200","address":"MANGALORE","e_id":"E1F"},
+    {"c_id":"C3C","name":"NIKHIL","ph_no":"9547372820","bill_no":"103","amount":"1000","address":"BANGALORE","e_id":"E1M"},
+    {"c_id":"C4C","name":"PRIYA","ph_no":"758392064","bill_no":"104","amount":"3000","address":"UDUPI","e_id":"E1F"},
+    {"c_id":"C5C","name":"POOJA","ph_no":"9805647382","bill_no":"105","amount":"7000","address":"SHIVAMOGGA","e_id":"E2F"},
+    {"c_id":"C6C","name":"DHANUSH","ph_no":"9758473527","bill_no":"106","amount":"5000","address":"SAGARA","e_id":"E2M"},
+    {"c_id":"C7C","name":"NAMITHA","ph_no":"9886644221","bill_no":"107","amount":"2500","address":"THUMKUR","e_id":"E3F"},
+    {"c_id":"C8C","name":"LAKSHMI","ph_no":"796825135","bill_no":"108","amount":"200","address":"HUBLI","e_id":"E2F"}
+        ];
+    $scope.orderByMe = function(x) {
+        $scope.myOrderBy = x;
+    }
+
+});
+</script>
+
+</body>
+</html>
