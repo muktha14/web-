@@ -56,7 +56,7 @@
   <th ng-click="orderByMe('amount')">amount</th>
 <th ng-click="orderByMe('address')">address</th>
 <th ng-click="orderByMe('e_id')">e_id</th>
-<th ng-click="orderByMe('x.name+','+x.address')">cus with add</th>
+<th ng-click="orderByMe('x.name+','+x.address')">details</th>
 </tr>
 <tr ng-repeat="x in names | orderBy:myOrderBy |filter:searchText">
 <td>{{x.c_id|lowercase}}</td>
