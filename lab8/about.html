@@ -1,0 +1,28 @@
+
+<div>
+    <h1 style="height: 1rem;background-color:aquamarine;"></h1>
+    <div class="container-fluid px-5 py-3">
+        <table class="table table-borderless table-hover container-fluid">
+            <thead>
+                <tr>
+                    <th>customer id</th>
+                    <th>name</th>
+                    <th>Phone</th>
+                    <th>bill no</th>
+                    <th>address</th>
+                    <th>emp id</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="emp in employees">
+                <tr>
+                    <td>{{emp.c_id | uppercase}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.ph_no}}</td>
+                    <td>{{emp.bill_no | lowercase}}</td>
+                    <td>{{emp.address }}</td>
+                    <td>{{emp.e_id}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

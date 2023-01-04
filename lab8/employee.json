@@ -1,0 +1,9 @@
+[
+    {"c_id":"C1C","name":"ANDRIYA","ph_no":"9124689752","bill_no":"101","address":"BANGALORE","e_id":"E1M"},
+    {"c_id":"C2C","name":"SNEHA","ph_no":"7846392648","bill_no":"102","address":"MANGALORE","e_id":"E1F"},
+    {"c_id":"C3C","name":"NIKHIL","ph_no":"9547372820","bill_no":"103","address":"BANGALORE","e_id":"E1M"},
+    {"c_id":"C4C","name":"PRIYA","ph_no":"758392064","bill_no":"104","address":"UDUPI","e_id":"E1F"},
+    {"c_id":"C5C","name":"POOJA","ph_no":"9805647382","bill_no":"105","address":"SHIVAMOGGA","e_id":"E2F"},
+    {"c_id":"C6C","name":"DHANUSH","ph_no":"9758473527","bill_no":"106","address":"SAGARA","e_id":"E2M"},
+    {"c_id":"C7C","name":"NAMITHA","ph_no":"9886644221","bill_no":"107","address":"THUMKUR","e_id":"E3F"},
+    {"c_id":"C8C","name":"LAKSHMI","ph_no":"796825135","bill_no":"108","address":"HUBLI","e_id":"E2F"}]
