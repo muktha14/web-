@@ -1,49 +1,51 @@
-const express = require('express')
-const app = express()
-const fs = require('fs')
+const express = require('express');
+const fs = require('fs');
 
-var obj = {
-  "name": "Vikram",
-  "mobNo": 9878675251,
-  "emailId": "vikram@gmail.com",
-  "noOfguests": 7,
-  "date": "21/01/2023",
-  "time": "10:00 PM"
-}
+const app = express();
+const port = 3000;
 
-app.get('/', (req, res) => {
+//Store Your JSON file in Local Host (Implement FS module in order to read the JSON file)
+app.get('/json1', (req, res) => {
   fs.readFile('data.json', (err, data) => {
-    if (!err) {
-      res.write(data)
-      res.end()
-      return
-    }
-    res.write("Error in reading data.json file")
-    res.end()
-    console.log("Error in reading data.json file")
-  })
-})
+    if (err) throw err;
+    res.send(data);
+  });
+});
 
-app.get('/add', (req, res) => {
+//Perform read and write operation on JSON in the server side
+app.get('/json2', (req, res) => {
   fs.readFile('data.json', (err, data) => {
-    if (!err) {
-      var updated = JSON.parse(data)
-      updated.push(obj)
-      fs.writeFile('data.json', JSON.stringify(updated, null, 2), (err) => {
-        if (!err) {
-          console.log("File Write Successful")
-        }
-        else {
-          console.log(err)
-        }
-      })
-    }
-  })
-  res.statusCode = 302
-  res.setHeader('Location', '/')
-  return res.end()
-})
+    if (err) throw err;
+    const json = JSON.parse(data);
+    json.c_id= "C1C",
+    json.ph_no= "9124689752",
+    json.bill_no= "101",
+    json.address="BANGALORE",
+    json.e_id= "E1M"
+   
+    fs.writeFile('data.json', JSON.stringify(json), (err) => {
+      if (err) throw err;
+      res.send('JSON file updated');
+    });
+  });
+});
 
-app.listen(3000, () => {
-  console.log('Server listening on port 3000')
-})
+//Manipulate the server response in the client side
+//Implement Routing feature using NodeJS
+app.get("/", (req, res) => {
+  res.sendFile("index.html", { root: __dirname });
+});
+
+app.get("/json", (req, res) => {
+  fs.readFile("data.json", (err, data) => {
+    if (err) throw err;
+    const json = JSON.parse(data);
+    console.log(json);
+    res.send(JSON.stringify(json));
+  });
+});
+
+
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});
